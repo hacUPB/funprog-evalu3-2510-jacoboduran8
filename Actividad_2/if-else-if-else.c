@@ -6,7 +6,6 @@ int main() {
     printf("Ingrese la calificación: ");
     scanf("%d", nota);
 
-    // Evaluar la calificación con if-else if-else
     if (nota == 0 & nota == 1) {
         printf("Insuficiente\n");
     } else if (nota == 2) {
