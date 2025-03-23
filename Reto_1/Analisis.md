@@ -35,7 +35,7 @@ Por lo que aquí lo mejor para hacerlo. Sin tener en cuenta cada caso sería
             printf("Opcion invalida\n");
         }
     } while (opcion !=5);
-
+  
 
 Aquí las variables que se tendrian serían `int opcion;`.
 
@@ -69,9 +69,9 @@ Hay que preguntarle al usuario los parametros necesarios para calcular lo desead
                 printf("Ingrese el valor de la Resistencia (R) en Ohmios:\n");
                 scanf("%f", &param_2);
 
-                result_ohm = param_1 * param_2;
+                result_Ohm = param_1 * param_2;
 
-                printf("Voltaje = %f\n", result_ohm);
+                printf("Voltaje = %f\n", result_Ohm);
             
             case 2:
                 printf("Ingrese el valor de Voltaje (V) en voltios:\n");
@@ -84,8 +84,8 @@ Hay que preguntarle al usuario los parametros necesarios para calcular lo desead
         
                 } else {
 
-                    result_ohm = param_1 / param_2;
-                    printf("Corriente = %f \n", result_ohm);
+                    result_Ohm = param_1 / param_2;
+                    printf("Corriente = %f \n", result_Ohm);
                 }
             
             case 3:
@@ -98,8 +98,8 @@ Hay que preguntarle al usuario los parametros necesarios para calcular lo desead
                     printf("No se puede dividir entre 0);
                 } else {
                     
-                    result_ohm = param_1 / param_2
-                    printf("Resistencia = %f", result_ohm);
+                    result_Ohm = param_1 / param_2
+                    printf("Resistencia = %f", result_Ohm);
                 }
 
             case 4:
@@ -216,7 +216,7 @@ En esta primera parte se le preguntara al usuario que es lo que quiere elegir. P
 ### Segunda parte
 En esta parte se diseño el menu para que el usuario escogiera entre ya 3 tipos de materiales con unos coeficientes de temperatura y resistividad preestablecidos y en el caso 4 de ser otro material que pregunte estas dos variables que son necesarias para realizar la operación. Y por último se harian las operaciones correctas para que se puede dar la operación completa.
 
-        switch(material) {
+        switch(mat) {
             case 1:
                 resistividad = 2.44e-8;
                 coefTemp = 0.0034;
@@ -235,7 +235,7 @@ En esta parte se diseño el menu para que el usuario escogiera entre ya 3 tipos 
 
             case 2:
                 resistividad = 2.82e-8;
-                coefTemp = 0.0040;
+                coef_temp = 0.0040;
 
                 printf("Ingrese la longitud del conductor (m): ");
                 scanf("%f", &long);
@@ -249,7 +249,7 @@ En esta parte se diseño el menu para que el usuario escogiera entre ya 3 tipos 
                 
             case 3:
                 resistividad = 1.68e-8;
-                coefTemp = 0.00393;
+                coef_temp = 0.00393;
                 
                 printf("Ingrese la longitud del conductor (m): ");
                 scanf("%f", &long);
@@ -303,13 +303,13 @@ En esta parte se juntaron las dos primeras partes y se metieron dentro de un `do
                     coefTemp = 0.0034;
                     
                     printf("Ingrese la longitud del conductor (m): ");
-                    scanf("%f", &long);
+                    scanf("%f", &longi);
                     printf("Ingrese el area de la seccion transversal (m^2): ");
                     scanf("%f", &area);
                     printf("Ingrese la temperatura de operacion (°C): ");
                     scanf("%f", &temp);
 
-                    resist = (resistividad * long / area) * (1 + coef_temp * (temp - 20));
+                    resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
                     printf("Resistencia del Conductor: %.6f Ohm\n", resist);
 
 
@@ -319,13 +319,13 @@ En esta parte se juntaron las dos primeras partes y se metieron dentro de un `do
                     coefTemp = 0.0040;
 
                     printf("Ingrese la longitud del conductor (m): ");
-                    scanf("%f", &long);
+                    scanf("%f", &longi);
                     printf("Ingrese el area de la seccion transversal (m^2): ");
                     scanf("%f", &area);
                     printf("Ingrese la temperatura de operacion (°C): ");
                     scanf("%f", &temp);
 
-                    resist = (resistividad * long / area) * (1 + coef_temp * (temp - 20));
+                    resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
                     printf("Resistencia del Conductor: %.6f Ohm\n", resist);
                     
                 case 3:
@@ -333,13 +333,13 @@ En esta parte se juntaron las dos primeras partes y se metieron dentro de un `do
                     coefTemp = 0.00393;
                     
                     printf("Ingrese la longitud del conductor (m): ");
-                    scanf("%f", &long);
+                    scanf("%f", &longi);
                     printf("Ingrese el area de la seccion transversal (m^2): ");
                     scanf("%f", &area);
                     printf("Ingrese la temperatura de operacion (°C): ");
                     scanf("%f", &temp);
 
-                    resist = (resistividad * long / area) * (1 + coef_temp * (temp - 20));
+                    resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
                     printf("Resistencia del Conductor: %.6f Ohm\n", resist);
 
                 case 4:
@@ -349,13 +349,13 @@ En esta parte se juntaron las dos primeras partes y se metieron dentro de un `do
                     scanf("%f", &coef_temp);
 
                     printf("Ingrese la longitud del conductor (m): ");
-                    scanf("%f", &long);
+                    scanf("%f", &longi);
                     printf("Ingrese el area de la seccion transversal (m^2): ");
                     scanf("%f", &area);
                     printf("Ingrese la temperatura de operacion (°C): ");
                     scanf("%f", &temp);
 
-                    resist = (resistividad * long / area) * (1 + coef_temp * (temp - 20));
+                    resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
                     printf("Resistencia del Conductor: %.6f Ohm\n", resist);
 
                     
@@ -370,3 +370,83 @@ En esta parte se juntaron las dos primeras partes y se metieron dentro de un `do
         } while (mat !=5);
 
 ## Resistencia para un LED
+Para este submenu se deben de solicitar ciertas variables, donde algunas pueden ser de tipo `int` y otras `float`. Las variables que el usuario debe de ingresar son:
+
+- `tens_fnt` --> Que seria la tensión de la fuente en voltios (V) --> `float`
+- `num_leds` --> Es el número de ledes que se conectaran al circuito --> `int`
+- `conex` --> Es el tipo de conexión de los ledes, si es en paralelo o en serie. --> `int`
+- `tens_nom` --> Es la tensión nominal del LED en voltios. --> `float`
+- `corr_nom` --> Es la corriente nominal del LED en voltios en amperios. --> `float`
+
+Después de tener todos estos datos, es necesario calcular las siguientes cosas:
+
+- Valor de la resistencia (R) --> `resist`
+- Potencia de la resistencia (PR) --> `pot_resist`
+- Potencia total del circuito (PTOTAL) --> `pot_tot`
+- Corriente total suministrada por la fuente (ITOTAL) --> `corr_tot`
+
+Para esto es necesario primero analizar como seria el posible circuito, para ver que es lo que piden y como lo podemos calcular, teniendo en cuenta las leyes de Ohm y formulas basicas de calculo de resistencia y potencia. Por ende es muy importante saber que hacer si los LEDES estan en paralelos o en serie, que procedimiento se debe de realizar.
+
+Si la conexión es en serie el voltaje total es la suma de voltajes de cada LED: `tens_tot = tens_nom * num_leds`. Y la corriente en este caso el la misma para todos los LEDS: `corr_tot = corr_nom`. Aquí se crea una nueva variable para almacenar la tensión total del circuito `tens_tot`.
+
+Si la conexión es en paralela el voltaje total es el mismo que la tensión nominal. Y la corrriente es la suma de corrientes de cada LED: `corr_tot = corr_nom * num_leds`.
+
+Hay que hacer una condición con `if` o `if-else` para que verifique que el voltaje de la fuente es mayor que el voltaje total de los LEDES `tens_fnt > tens_nom`.
+
+Ya con estos valores se puede calcular el resto de resistencias y potencias que nos piden calcular.
+
+- `resist = (tens_fnt - tens_nom) / corr_tot` --> Esta formula es para el valor de la resistencia.
+- `pot_resist = (tens_fnt - tens_nom) * corr_tot` --> Esta formula es para calcular la potencia de la resistencia
+- `pot_tot = tens_fnt * corr_tot` --> Esta formula calcula la potencia total del circuito.
+
+Y ahora así quedaria el codigo. Y para hacer que se repita hasta que el usuario lo quiera se puede meter dentro de un `switch` y un `do-while`.
+
+    do{
+        printf("1. Calcular Resistencia para un LED\n 2. Volver al menu principal");
+        scanf("%d", &RLED);
+
+        switch (RLED){
+            case 1:
+                printf("Ingrese la tensión de la fuente (V): ");
+                scanf("%f", &tens_fnt);
+                printf("Ingrese el número de LEDs: ");
+                scanf("%d", &num_leds);
+                printf("Ingrese el tipo de conexión (serie (0)/paralelo(1)): ");
+                scanf("%d", &conex);
+                printf("Ingrese la tensión nominal del LED (V_f): ");
+                scanf("%f", &tens_nom);
+                printf("Ingrese la corriente nominal del LED (A): ");
+                scanf("%f", &corr_nom);
+
+                if (conex == 0){
+                    tens_tot = tens_nom * num_leds;
+                    corr_tot = corr_nom;
+                } else if (conex == 1){
+                    corr_tot = corr_nom * num_leds;
+                } else{
+                    printf("Opcion incorrecta, vuelve a intentar\n");
+                    return;
+                }
+
+                if (tens_fnt <= tens_nom){
+                    printf("La tensión de la fuente debe de ser mayor que la tension nominal del LED\n");
+                    return;
+                }
+
+            resist = (tens_fnt - tens_nom) / corr_tot;
+            pot_resist = (tens_fnt - tens_nom) * corr_tot;
+            pot_tot = tens_fnt * corr_tot
+
+            printf("Valor de la resistencia (En Ohmios): %.2f \n", resist);
+            printf("Potencia de la resistencia (En Watts): %.2f W\n", pot_resist);
+            printf("Potencia total del circuito (En Watts): %.2f W\n", pot_tot);
+            printf("Corriente total suministrada por la fuente (en Amperios): %.2f A\n", corr_total);
+            
+            case 2:
+                printf("Elegiste volver al menu principal\n");
+        }
+    } while (RLED !=2);
+     return;
+
+
+Hasta que terminamos el analisis de los diferentes recursos que le debemos de proporcionar al usuario para que calcule cualquier de estas cosas.
