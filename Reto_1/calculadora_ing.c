@@ -13,7 +13,7 @@ int main() {
         printf("3. Calcular Resistencia de un Conductor\n");
         printf("4. Calcular Valor de la Resistencia para un LED\n");
         printf("5. Salir\n");
-        printf("Seleccione una opción: ");
+        printf("Seleccione una opcion: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
@@ -131,6 +131,92 @@ int main() {
                             printf("Opción inválida.\n");
                     }
                 } while (Pot != 4);
+                break;
+            
+            case 3:
+                do{
+                    printf("1. Oro\n");
+                    printf("2. Aluminio\n");
+                    printf("3. Cobre\n");
+                    printf("4. Otro\n");
+                    printf("5. Volver al menu principal\n");
+                    scanf("%d", &mat);
+        
+                    switch(mat) {
+                        case 1:
+                            resistividad = 2.44e-8;
+                            coef_temp = 0.0034;
+                            
+                            printf("Ingrese la longitud del conductor (m): ");
+                            scanf("%f", &longi);
+                            printf("Ingrese el area de la seccion transversal (m^2): ");
+                            scanf("%f", &area);
+                            printf("Ingrese la temperatura de operacion (°C): ");
+                            scanf("%f", &temp);
+        
+                            resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
+                            printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                            break;
+        
+        
+        
+                        case 2:
+                            resistividad = 2.82e-8;
+                            coef_temp = 0.0040;
+        
+                            printf("Ingrese la longitud del conductor (m): ");
+                            scanf("%f", &longi);
+                            printf("Ingrese el area de la seccion transversal (m^2): ");
+                            scanf("%f", &area);
+                            printf("Ingrese la temperatura de operacion (°C): ");
+                            scanf("%f", &temp);
+        
+                            resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
+                            printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                            break;
+                            
+                        case 3:
+                            resistividad = 1.68e-8;
+                            coef_temp = 0.00393;
+                            
+                            printf("Ingrese la longitud del conductor (m): ");
+                            scanf("%f", &longi);
+                            printf("Ingrese el area de la seccion transversal (m^2): ");
+                            scanf("%f", &area);
+                            printf("Ingrese la temperatura de operacion (°C): ");
+                            scanf("%f", &temp);
+        
+                            resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
+                            printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                            break;
+        
+                        case 4:
+                            printf("Ingrese la resistividad (Ohm*m): ");
+                            scanf("%f", &resistividad);
+                            printf("Ingrese el coeficiente de temperatura: ");
+                            scanf("%f", &coef_temp);
+        
+                            printf("Ingrese la longitud del conductor (m): ");
+                            scanf("%f", &longi);
+                            printf("Ingrese el area de la seccion transversal (m^2): ");
+                            scanf("%f", &area);
+                            printf("Ingrese la temperatura de operacion (°C): ");
+                            scanf("%f", &temp);
+        
+                            resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
+                            printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                            break;
+        
+                            
+                        case 5:
+                            printf("Elegiste volver al menu principal\n");
+                            break;
+        
+                        default:
+                            printf("Opcion invalida.\n"); 
+                    }
+        
+                } while (mat !=5);
                 break;
 
             case 4:
