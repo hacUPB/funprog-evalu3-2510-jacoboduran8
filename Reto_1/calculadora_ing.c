@@ -7,7 +7,6 @@ int main() {
     float tens_fnt, tens_nom, corr_nom, pot_resist, pot_tot, corr_tot, tens_tot;
 
     do {
-        printf("\n--- MENU PRINCIPAL ---\n");
         printf("1. Calcular Ley de Ohm\n");
         printf("2. Calcular Factor de Potencia\n");
         printf("3. Calcular Resistencia de un Conductor\n");
@@ -19,7 +18,7 @@ int main() {
         switch (opcion) {
             case 1:
                 do {
-                    printf("\n--- LEY DE OHM ---\n");
+                    printf("Ley de Ohm\n");
                     printf("1. Calcular Voltaje\n");
                     printf("2. Calcular Corriente\n");
                     printf("3. Calcular Resistencia\n");
@@ -77,7 +76,7 @@ int main() {
 
             case 2:
                 do {
-                    printf("\n--- FACTOR DE POTENCIA ---\n");
+                    printf("Factor de Potencia\n");
                     printf("1. Calcular Potencia Activa\n");
                     printf("2. Calcular Potencia Aparente\n");
                     printf("3. Calcular Factor de Potencia\n");
@@ -135,6 +134,7 @@ int main() {
             
             case 3:
                 do{
+                    printf("Resistencia de un Conductor\n");
                     printf("1. Oro\n");
                     printf("2. Aluminio\n");
                     printf("3. Cobre\n");
@@ -221,7 +221,7 @@ int main() {
 
             case 4:
                 do {
-                    printf("\n--- RESISTENCIA PARA LED ---\n");
+                    printf("Resistencia para LED\n");
                     printf("1. Calcular Resistencia para un LED\n");
                     printf("2. Volver al menú principal\n");
                     printf("Seleccione una opción: ");
@@ -276,7 +276,7 @@ int main() {
                 break;
 
             case 5:
-                printf("Saliendo del programa...\n");
+                printf("Saliendo del programa\n");
                 break;
 
             default:
