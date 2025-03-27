@@ -28,18 +28,24 @@ int main() {
 
                     switch (Ohm) {
                         case 1:
-                            printf("Ingrese la corriente (A): ");
+                            printf("Ingrese la corriente en amperios: ");
                             scanf("%f", &param_1);
-                            printf("Ingrese la resistencia (Ω): ");
+                            printf("Ingrese la resistencia en ohmios: ");
                             scanf("%f", &param_2);
+
+                            if (param_2 <= 0.0){
+                                printf("No se puede tener resistencias negativas o iguales a 0");
+                                break;
+                            } else{
                             result_Ohm = param_1 * param_2;
                             printf("Voltaje = %.2f V\n", result_Ohm);
                             break;
+                            }
 
                         case 2:
-                            printf("Ingrese el voltaje (V): ");
+                            printf("Ingrese el voltaje en voltios: ");
                             scanf("%f", &param_1);
-                            printf("Ingrese la resistencia (Ω): ");
+                            printf("Ingrese la resistencia en ohmios: ");
                             scanf("%f", &param_2);
 
                             if (param_2 == 0.0) {
@@ -51,16 +57,16 @@ int main() {
                             break;
 
                         case 3:
-                            printf("Ingrese el voltaje (V): ");
+                            printf("Ingrese el voltaje en voltios: ");
                             scanf("%f", &param_1);
-                            printf("Ingrese la corriente (A): ");
+                            printf("Ingrese la corriente en amperios: ");
                             scanf("%f", &param_2);
 
                             if (param_2 == 0.0) {
                                 printf("No se puede dividir entre 0.\n");
                             } else {
                                 result_Ohm = param_1 / param_2;
-                                printf("Resistencia = %.2f Ω\n", result_Ohm);
+                                printf("Resistencia = %.2f Ohms\n", result_Ohm);
                             }
                             break;
 

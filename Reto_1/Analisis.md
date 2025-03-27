@@ -69,23 +69,31 @@ Hay que preguntarle al usuario los parametros necesarios para calcular lo desead
                 printf("Ingrese el valor de la Resistencia (R) en Ohmios:\n");
                 scanf("%f", &param_2);
 
+                if (param_2 <= 0.0){
+                    printf("No se puede tener resistencias negativas o iguales a 0");
+                    break;
+                }
+
                 result_Ohm = param_1 * param_2;
 
                 printf("Voltaje = %f\n", result_Ohm);
+                break;
             
             case 2:
                 printf("Ingrese el valor de Voltaje (V) en voltios:\n");
                 scanf("%f", &param_1);
-                printf("Ingrese valor de Resistencia (R) en amperios:\n");
+                printf("Ingrese valor de Resistencia (R) en Ohmios:\n");
                 scanf("%f", &param_2);`
 
-                if (param_2 == 0.0){
-                    printf("No se puede dividir entre 0");
+                if (param_2 <= 0.0){
+                    printf("No se puede dividir entre 0 o no se puede tener una resistencia negativa");
+                    break;
         
                 } else {
 
                     result_Ohm = param_1 / param_2;
                     printf("Corriente = %f \n", result_Ohm);
+                    break;
                 }
             
             case 3:
@@ -94,12 +102,14 @@ Hay que preguntarle al usuario los parametros necesarios para calcular lo desead
                 printf("Ingrese la Corriente (I) en amperios:\n);
                 scanf("%f", &param_2);
 
-                if (param_2 == 0.0){
+                if (param_2 == 0.0 ){
                     printf("No se puede dividir entre 0);
+                    break;
                 } else {
                     
                     result_Ohm = param_1 / param_2
                     printf("Resistencia = %f", result_Ohm);
+                    break;
                 }
 
             case 4:
@@ -110,6 +120,8 @@ Hay que preguntarle al usuario los parametros necesarios para calcular lo desead
                 printf("Opcion Invalida\n");
         }
     } while (Ohm !=4);
+
+// Cabe recalcar que en la resistencia debe de ser un valor positivo. Por lo que se puede solucionar con un `if` en los casos que se pida resistencia, para que cuando se ingrese un valor menor que 0, diga error y que se vuelva a repetir el bucle.
 
 
 ## Factor de Potencia
@@ -146,6 +158,7 @@ Teniendo en cuenta estas variables se le debe de solicitar al usuario los valore
                     pot_act = pot_apa * fact_pot;
 
                     printf("El Factor de Potencia: %f", pot_act);
+                    break;
 
                 case 2:
                     printf("Ingrese potencia activa en Watts (W):\n");
@@ -155,11 +168,13 @@ Teniendo en cuenta estas variables se le debe de solicitar al usuario los valore
 
                     if (fact_pot == 0.0){
                         printf("No se puede dividir entre 0.0\n");
+                        break;
                     } else {
 
                         pot_apa = pot_act / fact_pot;
 
                         printf("La Potencia Aparente: %f", pot_apa);
+                        break;
                     }
                 
                 case 3:
@@ -170,11 +185,13 @@ Teniendo en cuenta estas variables se le debe de solicitar al usuario los valore
 
                     if (pot_apa == 0.0){
                         printf("No se puede dividir entre 0.0\n");
+                        break;
                     } else {
 
                         fact_pot = pot_act / pot_apa
 
                         printf("El Factor de Potencia: %f", fact_pot);
+                        break;
                     }
                 
                 case 4:
@@ -230,6 +247,7 @@ En esta parte se diseño el menu para que el usuario escogiera entre ya 3 tipos 
 
                 resist = (resistividad * long / area) * (1 + coef_temp * (temp - 20));
                 printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                break;
 
 
 
@@ -246,6 +264,7 @@ En esta parte se diseño el menu para que el usuario escogiera entre ya 3 tipos 
 
                 resist = (resistividad * long / area) * (1 + coef_temp * (temp - 20));
                 printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                break;
                 
             case 3:
                 resistividad = 1.68e-8;
@@ -260,6 +279,7 @@ En esta parte se diseño el menu para que el usuario escogiera entre ya 3 tipos 
 
                 resist = (resistividad * long / area) * (1 + coef_temp * (temp - 20));
                 printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                break;
 
             case 4:
                 printf("Ingrese la resistividad (Ohm*m): ");
@@ -276,6 +296,7 @@ En esta parte se diseño el menu para que el usuario escogiera entre ya 3 tipos 
 
                 resist = (resistividad * long / area) * (1 + coef_temp * (temp - 20));
                 printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                break;
 
                 
             case 5:
@@ -311,6 +332,7 @@ En esta parte se juntaron las dos primeras partes y se metieron dentro de un `do
 
                     resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
                     printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                    break;
 
 
 
@@ -327,6 +349,7 @@ En esta parte se juntaron las dos primeras partes y se metieron dentro de un `do
 
                     resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
                     printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                    break;
                     
                 case 3:
                     resistividad = 1.68e-8;
@@ -341,6 +364,7 @@ En esta parte se juntaron las dos primeras partes y se metieron dentro de un `do
 
                     resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
                     printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                    break;
 
                 case 4:
                     printf("Ingrese la resistividad (Ohm*m): ");
@@ -357,6 +381,7 @@ En esta parte se juntaron las dos primeras partes y se metieron dentro de un `do
 
                     resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
                     printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                    break;
 
                     
                 case 5:
@@ -441,6 +466,7 @@ Y ahora así quedaria el codigo. Y para hacer que se repita hasta que el usuario
             printf("Potencia de la resistencia (En Watts): %.2f W\n", pot_resist);
             printf("Potencia total del circuito (En Watts): %.2f W\n", pot_tot);
             printf("Corriente total suministrada por la fuente (en Amperios): %.2f A\n", corr_total);
+            break;
             
             case 2:
                 printf("Elegiste volver al menu principal\n");
@@ -450,3 +476,6 @@ Y ahora así quedaria el codigo. Y para hacer que se repita hasta que el usuario
 
 
 Hasta que terminamos el analisis de los diferentes recursos que le debemos de proporcionar al usuario para que calcule cualquier de estas cosas.
+
+## Debuggin
+En este apartado se documentara los cambios que se hagan o se encuentren al momento de ejecutar el codigo y encontrar posibles errores que hagan qu eel codigo falle y quede en un bucle infinito.
