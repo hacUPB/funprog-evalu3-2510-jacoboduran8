@@ -159,10 +159,14 @@ int main() {
                             scanf("%f", &area);
                             printf("Ingrese la temperatura de operacion (°C): ");
                             scanf("%f", &temp);
-        
+                            if(area > 0){
                             resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
                             printf("Resistencia del Conductor: %.6f Ohm\n", resist);
                             break;
+                            } else {
+                                printf("No se puede tener un area menor o igual a 0\n");
+                                break;
+                            }
         
         
         
@@ -176,10 +180,15 @@ int main() {
                             scanf("%f", &area);
                             printf("Ingrese la temperatura de operacion (°C): ");
                             scanf("%f", &temp);
-        
+                            
+                            if (area > 0){
                             resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
                             printf("Resistencia del Conductor: %.6f Ohm\n", resist);
                             break;
+                            } else {
+                                printf("No se puede tener un area menor o igual a 0\n");
+                                break;
+                            }
                             
                         case 3:
                             resistividad = 1.68e-8;
@@ -191,10 +200,15 @@ int main() {
                             scanf("%f", &area);
                             printf("Ingrese la temperatura de operacion (°C): ");
                             scanf("%f", &temp);
-        
+                            
+                            if (area > 0){
                             resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
                             printf("Resistencia del Conductor: %.6f Ohm\n", resist);
                             break;
+                            } else {
+                                printf("No se puede tener un area menor o igual a 0\n");
+                                break;
+                            }
         
                         case 4:
                             printf("Ingrese la resistividad (Ohm*m): ");
@@ -208,10 +222,15 @@ int main() {
                             scanf("%f", &area);
                             printf("Ingrese la temperatura de operacion (°C): ");
                             scanf("%f", &temp);
-        
+
+                            if (area > 0){
                             resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
                             printf("Resistencia del Conductor: %.6f Ohm\n", resist);
                             break;
+                            } else {
+                                printf("No se puede tener un area menor o igual a 0\n");
+                                break;
+                            }
         
                             
                         case 5:

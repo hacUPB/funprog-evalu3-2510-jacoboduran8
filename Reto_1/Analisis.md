@@ -479,3 +479,27 @@ Hasta que terminamos el analisis de los diferentes recursos que le debemos de pr
 
 ## Debuggin
 En este apartado se documentara los cambios que se hagan o se encuentren al momento de ejecutar el codigo y encontrar posibles errores que hagan qu eel codigo falle y quede en un bucle infinito.
+Cabe recalcar que se han encontrado errores como: falta de `break`, o falta de `if` en algunas partes del codigo, que ya han sido corregidas en el codigo y en el analisis. 
+
+1. En la parte de Resistencia de un Conductor, hay que ser más especifico en el area. Es decir, agregar una condición de que el área debe de ser > 0, ya que no puede haber área 0 o negativa. Eso lo podemos solucionar agregando un `if`.
+
+    - Ejemplo:
+
+                case 1:
+                    resistividad = 2.44e-8;
+                    coefTemp = 0.0034;
+                    
+                    printf("Ingrese la longitud del conductor (m): ");
+                    scanf("%f", &longi);
+                    printf("Ingrese el area de la seccion transversal (m^2): ");
+                    scanf("%f", &area);
+                    if (area > 0){
+                    printf("Ingrese la temperatura de operacion (°C): ");
+                    scanf("%f", &temp);
+                    
+                    resist = (resistividad * longi / area) * (1 + coef_temp * (temp - 20));
+                    printf("Resistencia del Conductor: %.6f Ohm\n", resist);
+                    break;
+                    } else {
+                        printf("No se puede tener un área menor o igual a 0\n");
+                    }
