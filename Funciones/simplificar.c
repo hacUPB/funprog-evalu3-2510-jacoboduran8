@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int mcd(int, int);
+void simplificar(int, int, int);
+
+int main(int arg, char const *argv[]);
+
+{
+    int numerador, denominador, maximo;
+    printf("Ingresa el numerador:\n");
+    scanf("%d", &numerador);
+    printf("Ingresa el denominador:\n");
+    scanf("%d", &denominador);
+    //Llamada a la función
+    maximo = mcd(numerador, denominador);
+    printf("M.C.D = %d\n", maximo);
+
+    return 0;
+}
+    int mcd(int num1, int num2){
+        
+        int mayor, menor, comun;
+        if (num1 == num2){
+            return num1;
+        }
+        if (num1 >= num2){
+            mayor = num1;
+        } else{
+            mayor = num2;
+            menor = num1;
+        }
+        while(menor >= 1){
+            if (num % menor == 0 && num2 == 0){
+                comun = menor;
+                break;
+            }
+            menor --;
+        }
+        return comun;
+    }
+    void simplificar(int num, int den, int maximo){
+        printf("%d / %d = %d\n", num, den, num / maximo, den / maximo);
+    }
